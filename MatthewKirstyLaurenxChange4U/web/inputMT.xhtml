@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Money Transfer</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputLabel value="#{serviceBean.parameterName}: "/>
+            <ul>
+                <li>
+                    <h:outputText value="Please enter your transfer details: "/>
+                </li>
+            </ul>
+            
+            <h:panelGrid columns="2" border="1">
+                <h:outputLabel value="Sender Name: "/>
+                <h:inputText value="#{serviceBean.parameterValue1MT}"/>
+                <h:outputLabel value="Receiver Name: "/>
+                <h:inputText value="#{serviceBean.parameterValue2MT}"/>
+                <h:outputLabel value="Money Origin: "/>
+                <h:inputText value="#{serviceBean.parameterValue3MT}"/>
+                <h:outputLabel value="Money Destination: "/>
+                <h:inputText value="#{serviceBean.parameterValue4MT}"/>
+                <h:outputLabel value="Currency Conversion Rate: "/>
+                <h:inputText value="#{serviceBean.parameterValue5MT}"/>
+                <h:outputLabel value="Sender Currency: "/>
+                <h:inputText value="#{serviceBean.parameterValue6MT}"/>
+                <h:outputLabel value="Receiver Currency: "/>
+                <h:inputText value="#{serviceBean.parameterValue7MT}"/>
+                <h:outputLabel value="Amount Transferred: "/>
+                <h:inputText value="#{serviceBean.parameterValue8MT}"/>
+                <h:outputLabel value="Amount Received: "/>
+                <h:inputText value="#{serviceBean.parameterValue9MT}"/>
+            </h:panelGrid>
+			<!--Money Transfer web service called-->
+                <h:commandButton value="Transfer Now" action="#{serviceBean.callServiceMT()}"/>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Calculator</title>
+    </h:head>
+    
+    <h:body>
+         <h:form>
+            <h:outputLabel value="#{serviceBean.parameterName}: "/>
+        <ul>
+            <h:outputText value="Calculator:  "/>
+            <li>
+                <h:outputText value="Please enter your calculation in the text boxes.  "/>
+            </li>
+        </ul>
+            <h:panelGrid columns="2" border="1">
+                <h:outputLabel value="First number: "/>
+                <h:inputText value="#{serviceBean.parameterValue1Cal}" />
+                <h:outputLabel value="Operator (*, /, +, -): "/>
+                <h:inputText value="#{serviceBean.parameterValue2Cal}" />
+                <h:outputLabel value="Second number: "/>
+                <h:inputText value="#{serviceBean.parameterValue3Cal}" />
+            </h:panelGrid>
+			<!--Calculate web service called-->
+                <h:commandButton value="Call" action="#{serviceBean.callService()}"/>
+        </h:form>
+    </h:body>
+</html>
+
+
+
